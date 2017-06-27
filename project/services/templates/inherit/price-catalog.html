@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% load customtags %}
+{% block title %}
+Автосервис - Каталог Цен
+{% endblock title %}
+{% block meta %}
+
+{% endblock meta %}
+{% block add_css %}
+<link rel="stylesheet" type="text/css" href="/static/css/services.css">
+{% endblock add_css %}
+{% block slider %}
+
+{% endblock slider %}
+{% block content %}
+<div class="theme-page padding-bottom-70">
+    <div class="row gray full-width page-header vertical-align-table">
+        <div class="row full-width padding-top-bottom-50 vertical-align-cell">
+            <div class="row">
+                <div class="page-header-left">
+                    <h1>КАТАЛОГ ЦЕН</h1>
+                </div>
+                <div class="page-header-right">
+                    <div class="bread-crumb-container">
+                        <label>ВЫ ЗДЕСЬ:</label>
+                        <ul class="bread-crumb">
+                            <li>
+                                <a title="Price-catalog" href="{% url 'price-catalog' %}">
+                                    КАТАЛОГ ЦЕН
+                                </a>
+                            </li>
+                            <li class="separator">
+                                &#47;
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="row">
+            <ul class="services-list clearfix padding-top-70">
+                {% for  service_type_object in service_type_objects %}
+                <li>
+                    <a href="{% url 'price-catalog'%}{{service_type_object.type_name|translite:'en'}}/" title="{{service_type_object}}">
+                        <img src="/static/images/samples/390x260/{{service_type_object.image}}" alt="{{service_type_object}}">
+                    </a>
+                    <h4 class="box-header"><a href="{% url 'price-catalog'%}{{service_type_object.type_name|translite:'en'}}/" title="{{service_type_object}}">{{service_type_object.type_name|upper}}<span class="template-arrow-menu"></span></a></h4>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block add_js %}
+
+{% endblock add_js %}

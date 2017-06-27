@@ -1,0 +1,17 @@
+Request headers:
+
+Request body:
+
+
+Response headers:
+HTTP/1.1 307 Temporary Redirect
+Server: nginx/1.10.1
+Date: Thu, 15 Jun 2017 20:13:33 GMT
+Content-Type: text/html
+Content-Length: 187
+Connection: keep-alive
+Keep-Alive: timeout=20
+Set-Cookie: TCBZ=fafd2764aa6eacd8991c77e59730b408; path=/; domain=.blizko.ru
+Location: http://avtoservis-zholnin.blizko.ru/tovary/?page=1&intruder_3cd5eb86aae6d8e5821dbbe63f4cc302=1
+Vary: User-Agent
+

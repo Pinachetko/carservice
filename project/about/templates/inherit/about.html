@@ -1,0 +1,200 @@
+{% extends "index.html" %}
+{% load customtags %}
+{% block title %}
+
+{% endblock title %}
+{% block meta %}
+
+{% endblock meta %}
+{% block add_css %}
+<style type="text/css" media="screen">
+    .features-list li{
+        min-height: 300px;
+    }
+</style>
+{% endblock add_css %}
+{% block slider %}
+
+{% endblock slider %}
+{% block content %}
+<div class="theme-page">
+    <div class="row gray full-width page-header vertical-align-table">
+        <div class="row full-width padding-top-bottom-50 vertical-align-cell">
+            <div class="row">
+                <div class="page-header-left">
+                    <h1>О КОМПАНИИ</h1>
+                </div>
+                <div class="page-header-right">
+                    <div class="bread-crumb-container">
+                        <label>ВЫ ЗДЕСЬ:</label>
+                        <ul class="bread-crumb">
+                            <li>
+                                <a title="О КОМПАНИИ" href="{% url 'about' %}">
+                                    О КОМПАНИИ
+                                </a>
+                            </li>
+                            <li class="separator">
+                                &#47;
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="row margin-top-70">
+            <div class="column column-1-2"> <p>Наш Автосервис открылся более 15 лет назад, у нас работают одни из лучших  специалистов Рыбинска, так же мы даем гарантии на наши работы и вы можете быть уверенны в качественном ремонте вашего автомобиля. Мы предлагаем клиентам полный список услуг и делаем ремонт точно в сроки. </p>
+                <p class="margin-top-10">Со дня открытия наша Автомастерская постоянно находится на стадии развития. Мы расширяем спектр услуг в техническом обслуживании авто, наращиваем производственные обороты и мощности, повышаем профессиональный уровень персонала, а так же качество выполняемых нами работ. Мы сотрудничаемс несколькими крупными дилерскими центрами Москвы, а так же напрямую работаем с поставщиками запасных частей, агрегатов и расходных материалов, что способствует быстрому и качественному решению, поставленных перед нами задач.</p>
+                <h4 class="box-header margin-top-26">ПОЧЕМУ ВЫБИРАЮТ НАС ?</h4>
+                <ul class="list margin-top-30">
+                    <li class="template-bullet">Квалифицированные и доброжелательные мастера</li>
+                    <li class="template-bullet">Профессиональное оборудование</li>
+                    <li class="template-bullet">Самые низкие цены на работу</li>
+                    <li class="template-bullet">Качественные запчасти по бюджетным ценам</li>
+                    <li class="template-bullet">ГАРАНТИЯ на все выполненные работы</li>
+                    <li class="template-bullet">ГАРАНТИЯ на запчасти приобретаемые у нас</li>
+                    <li class="template-bullet">ГАРАНТИЯ на то что вам правильно и качественно предоставили услугу</li>
+                    <li class="template-bullet">Отзывчивый  персонал, который с радостью поможет вам с обслуживанием вашего автомобиля, всегда проконсультирует и даст свою рекомендацию как с запчастями так и по автомобилю в целом.</li>
+                </ul>
+                <div class="page-margin-top" style="text-align: center">
+                    <a class="more" href="{% url 'price-catalog' %}" title="Наши услуги"><span>ПОСМОТРЕТЬ ЦЕНЫ</span></a>
+                </div>
+            </div>
+            <div class="column column-1-2">
+                <a href="/static/images/samples/870x580/image_05.jpg" class="prettyPhoto re-preload" title="Ремонт тормозной системы">
+                    <img src='/static/images/samples/570x380/image_05.jpg' alt='img'>
+                </a>
+                <div class="row margin-top-30">
+                    <div class="column column-1-2">
+                        <a href="/static/images/samples/870x580/image_07.jpg" class="prettyPhoto re-preload" title="Замена покрышек">
+                            <img src='/static/images/samples/570x380/image_07.jpg' alt='img'>
+                        </a>
+                    </div>
+                    <div class="column column-1-2">
+                        <a href="/static/images/samples/870x580/image_02.jpg" class="prettyPhoto re-preload" title="Замена масла">
+                            <img src='/static/images/samples/570x380/image_02.jpg' alt='img'>
+                        </a>
+                    </div>
+                </div>
+                <div class="row margin-top-30">
+                    <div class="column column-1-2">
+                        <a href="/static/images/samples/870x580/image_01.jpg" class="prettyPhoto re-preload" title="Диагностика">
+                            <img src='/static/images/samples/570x380/image_01.jpg' alt='img'>
+                        </a>
+                    </div>
+                    <div class="column column-1-2">
+                        <a href="/static/images/samples/870x580/image_10.jpg" class="prettyPhoto re-preload" title="Ремонт подвески">
+                            <img src='/static/images/samples/570x380/image_10.jpg' alt='img'>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gray full-width page-margin-top-section page-padding-top padding-bottom-66">
+            <div class="row">
+                <div class="column column-1-4 align-center">
+                    <span class="number animated-element" data-value="565"></span><span class="number sign"></span>
+                    <h5 class="margin-top-10">ПОСТОЯННЫХ<br>КЛИЕНТОВ</h5>
+                </div>
+                <div class="column column-1-4 align-center">
+                    <span class="number animated-element" data-value="1375"></span>
+                    <h5 class="margin-top-10">КЛИЕНТОВ<br>В ГОД</h5>
+                </div>
+                <div class="column column-1-4 align-center">
+                    <span class="number animated-element" data-value="895"></span>
+                    <h5 class="margin-top-10">ВЫПОЛНЕННЫХ<br>ДИАГНОСТИК</h5>
+                </div>
+                <div class="column column-1-4 align-center">
+                    <span class="number animated-element" data-value="764"></span>
+                    <h5 class="margin-top-10">ПОЛОЖИТЕЛЬНЫХ<br>ОТЗЫВОВ</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-2">
+            <div class="row testimonials-container">
+                <a href="#" class="slider-control left template-arrow-left-1"></a>
+                <ul class="testimonials-list">
+                    <li>
+                        <div class="hexagon small"><div class="sl-small-pen"></div></div>
+                        <p>"Обслуживание и сервис автомобиля должны быть направлены на то, чтобы клиент был уверен в своем автомобиле."</p>
+                    </li>
+                    <li>
+                        <div class="hexagon small"><div class="sl-small-pen"></div></div>
+                        <p>"Наши услуги должны приносить не только удовлетворение, но и удовольствие вне зависимости от стоимости. И даже сверх оплаченных средств."</p>
+                    </li>
+                    <li>
+                        <div class="hexagon small"><div class="sl-small-pen"></div></div>
+                        <p>"В нашем автосервисе клиент должен получить не только услугу, но и совет, рекомендацию по эксплуатации своего автомобиля."</p>
+                    </li>
+                    <li>
+                        <div class="hexagon small"><div class="sl-small-pen"></div></div>
+                        <p>"Постоянные клиенты - это гордость, вес и рекомендации нашей Компании, поэтому отношение к ним всегда будет необыкновенным."</p>
+                    </li>
+                    <li>
+                        <div class="hexagon small"><div class="sl-small-pen"></div></div>
+                        <p>"Автомобиль – это средство. Причем для достижения совершенно разных целей наших клиентов. Поэтому, уважая Ваши желания, цели и потребности мы отнесемся максимально заботливо и бережно к Вашему автомобилю."</p>
+                    </li>
+                </ul>
+                <a href="#" class="slider-control right template-arrow-left-1"></a>
+            </div>
+        </div>
+        <div class="row page-margin-top-section">
+            <div class="row">
+                <h2 class="box-header">ОБЗОР УСЛУГ АВТОСЕРВИСА</h2>
+                <p class="description align-center">Мы можем помочь вам во всем: от замены масла до смены двигателя.<br>Мы можем справиться с любой проблемой как на иностранных, так и на отечественных транспортных средствах.</p>
+            </div>
+            <div class="row page-margin-top-section">
+                <div class="column column-1-3">
+                    <ul class="features-list">
+                        <li>
+                            <h5>ЭЛЕКТРОТЕХНИЧЕСКИЕ РАБОТЫ</h5>
+                            <div class="icon sl-small-car-battery"></div>
+                            <p>Выявить неисправности сложных электронных узлов автомобиля может только высококвалифицированный мастер применяющий передовое современное оборудование для проведения диагностики.<br> Чтобы избежать неприятностей, необходима своевременная диагностика электрооборудования автомобиля .</p>
+                        </li>
+                        <li>
+                            <h5>РЕМОНТ ДВИГАТЕЛЯ </h5>
+                            <div class="icon sl-small-engine-belt"></div>
+                            <p>Процесс ремонта двигателя, как правило, занимает больше времени, чем манипуляции с другими узлами автомобиля, особенно, если необходим капитальный ремонт двигателя. Современные средства автоматизации позволяют ускорить этот процесс, а методы контроля обеспечат неизменно высокое качество выполненных работ.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-3">
+                    <ul class="features-list">
+                        <li>
+                            <h5>ЗАМЕНА ТЕХНИЧЕСКИХ ЖИДКОСТЕЙ </h5>
+                            <div class="icon sl-small-car-oil"></div>
+                            <p>Замена масла в коробке или ДВС, <br>замена охлаждающей или тормозной жидкости — популярные услуги в нашей автомастерской. Мы проводим эти регулярные регламентные процедуры с использование современного оборудования и высококачественных расходных материалов и запчастей</p>
+                        </li>
+                        <li>
+                            <h5>РЕМОНТ РУЛЕВОГО УПРАВЛЕНИЯ</h5>
+                            <div class="icon sl-small-steering-wheel"></div>
+                            <p>Специалисты нашего автосервиса произведут ремонт рулевого управления, замену рулевой рейки, замену компрессора гидроусилителя руля, других элементов рулевого управления, при этом будут соблюдены все рекомендации завода изготовителя автомобиля согласно технической документации, связанные с данным видом ремонта. </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-3">
+                    <ul class="features-list">
+                        <li>
+                            <h5>ДИАГНОСТИКА АВТОМОБИЛЕЙ</h5>
+                            <div class="icon sl-small-car-check"></div>
+                            <p>Мы предлагает услугу по тестрированию важных систем автомобиля. В частности комплексная компьютерная диагностика двигателя проводится для того, чтобы найти неисправности и оценить его состояние. Наши специалисты помогут определить все изъяны вашего автомобиля.</p>
+                        </li>
+                        <li>
+                            <h5>РЕМОНТ ХОДОВОЙ ЧАСТИ </h5>
+                            <div class="icon sl-small-car-fix"></div>
+                            <p>Наши специалисты знают, как выявить любые поломки ходовой части и быстро, а главное, квалифицированно их устранить. Помимо тестирования всех технологических узлов ходовой части, мы также проводим проверку на утечки жидкостей, участвующих в работе системы. </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row gray full-width padding-top-54 padding-bottom-61 align-center">
+            <h3><span class="button-label">ОСТАВЬТЕ ЗАЯВКУ И МЫ ВАМ ОБЯЗАТЕЛЬНО ПЕРЕЗВОНИМ</span> <a class="more" href="#" title="Оставить заявку"><span>ОСТАВИТЬ ЗАЯВКУ</span></a></h3>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block add_js %}
+
+{% endblock add_js %}

@@ -1,0 +1,414 @@
+{% extends "index.html" %}
+{% block title %}Автосервис - Главная{% endblock title %}
+{% block meta %}
+
+{% endblock meta %}
+{% block add_css %}
+<style type="text/css" media="screen">
+ .features-list li{
+        min-height: 300px;
+  }
+
+</style>
+{% endblock add_css %}
+{% block slider %}
+<!-- Slider Revolution -->
+<div class="revolution-slider-container">
+	<div class="revolution-slider">
+		<ul style="display: none;">
+			<!-- SLIDE 1 -->
+			<li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+				<!-- MAIN IMAGE -->
+				<img src="/static/images/slider/image_01.jpg" alt="slidebg1" data-bgfit="cover">
+				<!-- LAYERS -->
+				<!-- LAYER 01 -->
+				<div class="tp-caption"
+				data-frames='[{"delay":500,"speed":1200,"from":"y:-40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+				data-x="center"
+				data-y="97"
+				>
+				<div class="hexagon"><div class="sl-small-car-oil"></div></div>
+			</div>
+			<!-- LAYER 02 -->
+			<div class="tp-caption"
+			data-frames='[{"delay":900,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+			data-x="center"
+			data-y="262"
+			>
+			<h2><a target="_top" href="#" title=" ">Ремонт и обслуживание автомобилей</a></h2>
+		</div>
+		<!-- LAYER 03 -->
+		<div class="tp-caption"
+		data-frames='[{"delay":1100,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+		data-x="center"
+		data-y="343"
+		>
+		<p class="description">Гарантия на все выполненные работы.</p>
+	</div>
+	<!-- LAYER 04 -->
+	<div class="tp-caption"
+	data-frames='[{"delay":1300,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+	data-x="center"
+	data-y="441"
+	>
+	<div class="align-center">
+		<a target="_top" class="more simple pop-up-link" href="#" title=""><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
+	</div>
+</div>
+<!-- / -->
+</li>
+<!-- SLIDE 2 -->
+<li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+	<!-- MAIN IMAGE -->
+	<img src="/static/images/slider/image_02.jpg" alt="slidebg2" data-bgfit="cover">
+	<!-- LAYERS -->
+	<!-- LAYER 01 -->
+	<div class="tp-caption customin customout"
+	data-frames='[{"delay":500,"speed":1200,"from":"y:-40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+	data-x="center"
+	data-y="97"
+	>
+	<div class="hexagon"><div class="sl-small-car"></div></div>
+</div>
+<!-- LAYER 02 -->
+<div class="tp-caption customin customout"
+data-frames='[{"delay":900,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+data-x="center"
+data-y="262"
+>
+<h2><a target="_top" href="#" title=" ">Высокий уровень сервиса и внимание к деталям</a></h2>
+</div>
+<!-- LAYER 03 -->
+<div class="tp-caption customin customout"
+data-frames='[{"delay":1100,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+data-x="center"
+data-y="343"
+>
+<p class="description"> Мы делаем работу качественно и в срок.</p>
+</div>
+<!-- LAYER 04 -->
+<div class="tp-caption customin customout"
+data-frames='[{"delay":1300,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+data-x="center"
+data-y="441"
+>
+<div class="align-center">
+	<a target="_top" class="more simple pop-up-link" href="#" title=" "><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
+</div>
+</div>
+<!-- / -->
+</li>
+
+<!-- SLIDE 3 -->
+<li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+	<!-- MAIN IMAGE -->
+	<img src="/static/images/slider/image_03.jpg" alt="slidebg3" data-bgfit="cover">
+	<!-- LAYERS -->
+	<!-- LAYER 01 -->
+	<div class="tp-caption customin customout"
+	data-frames='[{"delay":500,"speed":1200,"from":"y:-40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+	data-x="center"
+	data-y="97"
+	>
+	<div class="hexagon"><div class="sl-small-car-checklist"></div></div>
+</div>
+<!-- LAYER 02 -->
+<div class="tp-caption customin customout"
+data-frames='[{"delay":900,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+data-x="center"
+data-y="262"
+>
+<h2><a target="_top" href="#">Высокое качество, адекватные цены</a></h2>
+</div>
+<!-- LAYER 03 -->
+<div class="tp-caption customin customout"
+data-frames='[{"delay":1100,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+data-x="center"
+data-y="343"
+>
+<p class="description">Оптимальное для Вас соотношение цена/качество.</p>
+</div>
+<!-- LAYER 04 -->
+<div class="tp-caption customin customout"
+data-frames='[{"delay":1300,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+data-x="center"
+data-y="441"
+>
+<div class="align-center">
+	<a target="_top" class="more simple pop-up-link" href="#" title=" "><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
+</div>
+</div>
+<!-- / -->
+</li>
+</ul>
+</div>
+</div>
+<!--/-->
+{% endblock slider %}
+{% block content %}
+<div class="theme-page">
+	<div class="clearfix">
+		<div class="row gray full-width">
+			<div class="announcement clearfix">
+				<ul class="columns no-width">
+					<li class="column column-2-3">
+						<div class="vertical-align">
+							<div class="vertical-align-cell">
+								<h3>ОСТАВЬТЕ ЗАЯВКУ И МЫ ВАМ  ПЕРЕЗВОНИМ</h3>
+							</div>
+						</div>
+					</li>
+					<li class="column column-1-3">
+						<div class="vertical-align">
+							<div class="vertical-align-cell">
+								<a class="more pop-up-link" href="#" title="Заказать звонок"><span>ЗАКАЗАТЬ ЗВОНОК</span></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row page-margin-top-section">
+			<div class="row">
+				<h2 class="box-header">Почему автовладельцы выбирают наш сервис?</h2>
+				<p class="description align-center">Мы предлагает клиентам комплексное обслуживание машин. Специалисты автосервиса в кратчайшие сроки проведут диагностику и дадут необходимые рекомендации по их устранению. Все услуги автосервиса осуществляются на качественном оборудовании, благодаря чему мастера получают точные данные о работе систем автомобиля.</p>
+				<div class="row page-margin-top">
+					<div class="column column-1-3">
+						<ul class="features-list big">
+							<li>
+								<div class="hexagon"><div class="sl-small-user-chat"></div></div>
+								<h4 class="box-header page-margin-top">ВЕЖЛИВЫЙ И ОТЗЫВЧИВЫЙ  <br>ПЕРСОНАЛ</h4>
+								<p>Если вам нужно качество, которое вы ожидаете от дилерского центра, но с более личной и дружеской атмосферой, вы его нашли.</p>
+							</li>
+						</ul>
+					</div>
+					<div class="column column-1-3">
+						<ul class="features-list big">
+							<li>
+								<div class="hexagon"><div class="sl-small-wrench-screwdriver"></div></div>
+								<h4 class="box-header page-margin-top">ПРОФЕССИОНАЛЬНОЕ <br> ОБОРУДОВАНИЕ</h4>
+								<p>Автомастерская полностью укомплектована современным ремонтным и диагностическим оборудованием, рекомендованным ведущими производителями.</p>
+							</li>
+						</ul>
+					</div>
+					<div class="column column-1-3">
+						<ul class="features-list big">
+							<li>
+								<div class="hexagon"><div class="sl-small-truck-tow"></div></div>
+								<h4 class="box-header page-margin-top">ПРОФЕССИОНАЛЬНЫЕ <br>СТАНДАРТЫ</h4>
+								<p>Наша авторемонтная мастерская способна обслуживать различные модели. Мы выполняем только ту работу, которая необходима для решения вашей проблемы.</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row full-width margin-top-70"></div>
+		<div class="row full-width page-margin-top-section">
+			<ul class="galleries-list clearfix page-margin-top">
+				<li>
+					<a href="#" title=" ">
+						<img src="/static/images/samples/480x320/image_13.jpg" alt="">
+					</a>
+					<div class="view align-center">
+						<div class="vertical-align-table">
+							<div class="vertical-align-cell">
+								<p class="description">Ремонт двигателей</p>
+								<a class="more simple" href="{% url 'price-catalog' %}remont-dvigatelej/" title="Подробнее">ПОДРОБНЕЕ</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="Oil Change">
+						<img src="/static/images/samples/480x320/image_12.jpg" alt="">
+					</a>
+					<div class="view align-center">
+						<div class="vertical-align-table">
+							<div class="vertical-align-cell">
+								<p class="description">Ремонт трансмисии</p>
+								<a class="more simple" href="{% url 'price-catalog' %}remont-transmissii/" title="Подробнее">ПОДРОБНЕЕ</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="Our Facility">
+						<img src="/static/images/samples/480x320/image_08.jpg" alt="">
+					</a>
+					<div class="view align-center">
+						<div class="vertical-align-table">
+							<div class="vertical-align-cell">
+								<p class="description">Ремонт топливной системы</p>
+								<a class="more simple" href="{% url 'price-catalog' %}remont-toplivnoj-sistemyi/" title="Подробнее">ПОДРОБНЕЕ</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="Brakes Repair">
+						<img src="/static/images/samples/480x320/image_05.jpg" alt="">
+					</a>
+					<div class="view align-center">
+						<div class="vertical-align-table">
+							<div class="vertical-align-cell">
+								<p class="description">Ремонт рулевого управления</p>
+								<a class="more simple" href="{% url 'price-catalog' %}remont-sistemyi-rulevogo-upravleniya/" title="Подробнее">ПОДРОБНЕЕ</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="row page-margin-top-section">
+			<div class="row">
+				<h2 class="box-header">ОБЗОР УСЛУГ АВТОСЕРВИСА</h2>
+				<p class="description align-center">Мы можем помочь вам во всем: от замены масла до смены двигателя.<br>Мы можем справиться с любой проблемой как на иностранных, так и на отечественных транспортных средствах.</p>
+			</div>
+			<div class="row page-margin-top-section">
+				<div class="column column-1-3">
+					<ul class="features-list">
+						<li>
+							<h5>ЭЛЕКТРОТЕХНИЧЕСКИЕ РАБОТЫ</h5>
+							<div class="icon sl-small-car-battery"></div>
+							<p>Выявить неисправности сложных электронных узлов автомобиля может только высококвалифицированный мастер применяющий передовое современное оборудование для проведения диагностики.<br> Чтобы избежать неприятностей, необходима своевременная диагностика электрооборудования автомобиля .</p>
+						</li>
+						<li>
+							<h5>РЕМОНТ ДВИГАТЕЛЯ </h5>
+							<div class="icon sl-small-engine-belt"></div>
+							<p>Процесс ремонта двигателя, как правило, занимает больше времени, чем манипуляции с другими узлами автомобиля, особенно, если необходим капитальный ремонт двигателя. Современные средства автоматизации позволяют ускорить этот процесс, а методы контроля обеспечат неизменно высокое качество выполненных работ.</p>
+						</li>
+					</ul>
+				</div>
+				<div class="column column-1-3">
+					<ul class="features-list">
+						<li>
+							<h5>ЗАМЕНА ТЕХНИЧЕСКИХ ЖИДКОСТЕЙ </h5>
+							<div class="icon sl-small-car-oil"></div>
+							<p>Замена масла в коробке или ДВС, <br>замена охлаждающей или тормозной жидкости — популярные услуги в нашей автомастерской. Мы проводим эти регулярные регламентные процедуры с использование современного оборудования и высококачественных расходных материалов и запчастей</p>
+						</li>
+						<li>
+							<h5>РЕМОНТ РУЛЕВОГО УПРАВЛЕНИЯ</h5>
+							<div class="icon sl-small-steering-wheel"></div>
+							<p>Специалисты нашего автосервиса произведут ремонт рулевого управления, замену рулевой рейки, замену компрессора гидроусилителя руля, других элементов рулевого управления, при этом будут соблюдены все рекомендации завода изготовителя автомобиля согласно технической документации, связанные с данным видом ремонта. </p>
+						</li>
+					</ul>
+				</div>
+				<div class="column column-1-3">
+					<ul class="features-list">
+						<li>
+							<h5>ДИАГНОСТИКА АВТОМОБИЛЕЙ</h5>
+							<div class="icon sl-small-car-check"></div>
+							<p>Мы предлагает услугу по тестрированию важных систем автомобиля. В частности комплексная компьютерная диагностика двигателя проводится для того, чтобы найти неисправности и оценить его состояние. Наши специалисты помогут определить все изъяны вашего автомобиля.</p>
+						</li>
+						<li>
+							<h5>РЕМОНТ ХОДОВОЙ ЧАСТИ </h5>
+							<div class="icon sl-small-car-fix"></div>
+							<p>Наши специалисты знают, как выявить любые поломки ходовой части и быстро, а главное, квалифицированно их устранить. Помимо тестирования всех технологических узлов ходовой части, мы также проводим проверку на утечки жидкостей, участвующих в работе системы. </p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row gray full-width padding-top-54 padding-bottom-61 margin-top-70 align-center">
+			<h3><span class="button-label">БОЛЕЕ ПОЛНЫЙ СПЕКТР УСЛУГ</span> <a class="more" target="_blank" href="{% url 'get-full-services-list' %}" title="Полный спектр услуг"><span>ПОКАЗАТЬ</span></a></h3>
+		</div>
+		<div class="row full-width padding-top-70 padding-bottom-66 margin-top-70 parallax parallax-1">
+			<div class="row testimonials-container">
+				<a href="#" class="slider-control left template-arrow-left-1"></a>
+				<ul class="testimonials-list">
+					<li>
+						<div class="hexagon small"><div class="sl-small-pen"></div></div>
+						<p>"Обслуживание и сервис автомобиля должны быть направлены на то, чтобы клиент был уверен в своем автомобиле."</p>
+					</li>
+					<li>
+						<div class="hexagon small"><div class="sl-small-pen"></div></div>
+						<p>"Наши услуги должны приносить не только удовлетворение, но и удовольствие вне зависимости от стоимости. И даже сверх оплаченных средств."</p>
+					</li>
+					<li>
+						<div class="hexagon small"><div class="sl-small-pen"></div></div>
+						<p>"В нашем автосервисе клиент должен получить не только услугу, но и совет, рекомендацию по эксплуатации своего автомобиля."</p>
+					</li>
+					<li>
+						<div class="hexagon small"><div class="sl-small-pen"></div></div>
+						<p>"Постоянные клиенты - это гордость, вес и рекомендации нашей Компании, поэтому отношение к ним всегда будет необыкновенным."</p>
+					</li>
+					<li>
+						<div class="hexagon small"><div class="sl-small-pen"></div></div>
+						<p>"Автомобиль – это средство. Причем для достижения совершенно разных целей наших клиентов. Поэтому, уважая Ваши желания, цели и потребности мы отнесемся максимально заботливо и бережно к Вашему автомобилю."</p>
+					</li>
+				</ul>
+				<a href="#" class="slider-control right template-arrow-left-1"></a>
+			</div>
+		</div>
+
+		<div class="row page-margin-top-section">
+			<div class="column column-1-2">
+				<h3 class="box-header">НАША РАБОТА</h3>
+				<p class="description">Наша автомастерская является сервисом ремонта автомобилей «полного» цикла, если Вы посмотрите на перечень предоставляемых нами услуг то непременно поймете, что мы поможем Вам решить любую проблему связанную с ремонтом Вашего автомобиля. Будь то комплексная покраска автомобиля, кузовной ремонт, слесарные работы или установка дополнительного оборудования на авто, ксенона, парктроников и т.д., все это можем делать мы. </p>
+				<p>Занимаясь ремонтом автомобилей вот уже более пятнадцати лет, мы накопили огромный опыт, поэтому доверяя свой автомобиль нам Вы можете быть уверены что ремонт будет выполнен качественно. Кроме того наш автосервис  оснащен современным оборудованием позволяющее диагностировать и ремонтировать даже сложные неисправности авто. А квалификация наших работников это повод для зависти наших конкурентов. Мы производим сервисное обслуживание и ремонт отечественных, европейских, американских, японских и корейских и многих других автомобилей.</p>
+				<div class="page-margin-top">
+					<a class="more" href="{% url 'about' %}" title="Подробнее"><span>ПОДРОБНЕЕ</span></a>
+				</div>
+			</div>
+			<div class="column column-1-2">
+				<h3 class="box-header">ПОПУЛЯРНЫЕ ВОПРОСЫ</h3>
+				<ul class="accordion margin-top-40 clearfix">
+					<li>
+						<div id="accordion-using-synthetic">
+							<h4> Какой срок замены тормозной жидкости вы рекомендуете?</h4>
+						</div>
+						<p>Мы рекомендуем менять тормозную жидкость каждые 1,5-2 года. Этот срок обусловлен ее высокой гигроскопичностью - то есть, способностью концентрировать влагу из воздуха. Данный показатель резко снижает ее температуру кипения. Превышение рекомендованного срока эксплуатации тормозной жидкости отрицательно сказывается на эффективности работы тормозной системы вплоть до ее отказа.</p>
+					</li>
+					<li>
+						<div id="accordion-parts-replacements">
+							<h4>Перегрев двигателя. Как найти причину?</h4>
+						</div>
+						<p>Первое на что нужно обратить внимание, это работа термостата, т.к. большинство неисправностей системы охлаждения связано с ним. Также необходимо проверить работу помпы. Иногда перегрев связан с образованием воздушной пробки, а также с пробоем прокладки головки блока цилиндров.</p>
+					</li>
+					<li>
+						<div id="accordion-track-routine">
+							<h4>Почему при движении возникают вибрации?</h4>
+						</div>
+						<p>Вибрации могут возникать по следующим причинам: дисбаланс колёс, повышенный износ тормозных дисков, барабанов, нарушение геометрии привода, карданной передачи. Начинать нужно с проверки балансировки и диагностики тормозной системы.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row full-width top-border page-margin-top-section padding-bottom-50">
+			<div class="row">
+				<div class="our-clients-list-container page-margin-top" style="margin-left:35px">
+					<ul class="our-clients-list">
+						{% for logo in logos %}
+						<li>
+							<img src="/static/images/logos/png/{{logo}}" alt="">
+						</li>
+						{% endfor %}
+					</ul>
+					<div class="our-clients-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+{% block add_js %}
+<script type="text/javascript">
+	// $(document).ready(function(){
+	// 	$(".pop-up-link").on("click", function(event)
+	// 	{
+	// 		event.preventDefault();
+	// 		$("div.pop-up-substrate").fadeIn(200);
+	// 		$("div.pop-up").fadeIn('slow');
+	// 		return false;
+	// 	});
+	// });
+</script>
+{% endblock add_js %}

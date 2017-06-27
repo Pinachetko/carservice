@@ -1,0 +1,20 @@
+-r base.txt
+
+grab==0.6.38
+Celery==4.0.2
+pycurl==7.43.0
+django-celery
+django-kombu
+celery==3.1.25
+django-celery==3.2.1
+django-kombu==0.9.4
+kombu==3.0.37
+django-redis==4.8.0
+redis==2.10.5
+celery-with-redis==3.0
+transliterate==1.9
+pillow==4.1.1
+reportlab==3.4.0
+cairocffi==0.6
+weasyprint
+uwsgi==2.0.15

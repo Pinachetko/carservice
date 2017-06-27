@@ -1,0 +1,198 @@
+{% extends "index.html" %}
+{% load customtags%}
+{% block title %}
+Автосервис - {{current_type_name}}
+{% endblock title %}
+{% block meta %}
+
+{% endblock meta %}
+{% block add_css %}
+<link rel="stylesheet" type="text/css" href="/static/css/simplePagination.css">
+<link rel="stylesheet" type="text/css" href="/static/css/services-menu.css">
+<link rel="stylesheet" type="text/css" href="/static/css/services.css">
+<link rel="stylesheet" type="text/css" href="/static/lib/preloader/style.css">
+<style type="text/css" media="screen">
+
+</style>
+{% endblock add_css %}
+{% block slider %}
+{% endblock slider %}
+{% block content %}
+<div class="theme-page">
+    <div class="row gray full-width page-header vertical-align-table">
+        <div class="row full-width padding-top-bottom-50 vertical-align-cell">
+            <div class="row">
+                <div class="page-header-left">
+                    <h1>{{current_type_name|upper}}</h1>
+                </div>
+                <div class="page-header-right">
+                    <div class="bread-crumb-container">
+                        <label>ВЫ ЗДЕСЬ:</label>
+                        <ul class="bread-crumb">
+                            <li>
+                                <a title="Каталог цен" href="{% url 'price-catalog' %}">
+                                    КАТАЛОГ ЦЕН
+                                </a>
+                            </li>
+                            <li class="separator">
+                                &#47;
+                            </li>
+                            <li>
+                                <a id="current-dir" title="{{current_type_name}}" href="{% url 'price-catalog' %}{{current_type_name|translite:'en'}}/">
+                                    {{current_type_name|upper}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="row margin-top-70">
+            <div class="column column-1-4 ">
+
+                <ul id="menu" class="menu">
+                <li class="selected menu-lvl-1">
+                    <div class="link">
+                      <i class="fa fa-database"></i>
+                      {% with 'ServiceType'|get_object_by_name:current_type_name as service_type_object %}
+                      {{current_type_name}}
+                      <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="submenu open" style="display:block">
+                      {% for serviced_car_object in service_type_object.serviced_cars.all  %}
+                      {% with request.path|dir_by_position:'3' as current_car_type %}
+                      {% if serviced_car_object.car_type|upper == current_car_type|upper %}
+                        <li class="selected menu-lvl-2">
+                      {% else %}
+                        <li class = "menu-lvl-2">
+                      {% endif %}
+                      {% endwith %}
+                      <a class="link-car-filter" href="#header" post-url="{% url 'price-catalog' %}{{current_type_name|translite:'en'}}/{{serviced_car_object.car_type|translite:'en'}}/">{{serviced_car_object.car_type}}</a></li>
+                      {% endfor %}
+                      {% if request.path|dir_by_position:'3' == "DoesNotExist" %}
+                        <li class="selected menu-lvl-2">
+                      {% else %}
+                        <li class = "menu-lvl-2">
+                      {% endif %}
+                      <a class="link-car-filter" href="#header" post-url="{% url 'price-catalog' %}{{current_type_name|translite:'en'}}/">Все предложения</a></li>
+                      {% endwith %}
+                    </ul>
+                  </li>
+                {% for service_type_object in  service_type_objects %}
+                {% if service_type_object.type_name != current_type_name%}
+                  <li class = "menu-lvl-1">
+                  <div class="link">
+                    <i class="fa fa-database"></i>
+                    {{service_type_object}}
+                    <i class="fa fa-chevron-down"></i>
+                  </div>
+                  <ul class="submenu">
+                    {% for serviced_car_object in service_type_object.serviced_cars.all  %}
+                    <li class = "menu-lvl-2"><a  class="link-car-filter" href="#header" post-url="{% url 'price-catalog' %}{{service_type_object.type_name|translite:'en'}}/{{serviced_car_object.car_type|translite:'en'}}/">{{serviced_car_object}}</a></li>
+                    {% endfor %}
+                    <li class = "menu-lvl-2" ><a  class="link-car-filter" href="#header" post-url="{% url 'price-catalog' %}{{service_type_object.type_name|translite:'en'}}/">Все предложения</a></li>
+                  </ul>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                </ul>
+                <div class="call-to-action page-margin-top" style="margin-bottom: 50px">
+                    <div class="hexagon small"><div class="sl-small-percent"></div></div>
+                    <h4 class="margin-top-58">АКЦИЯ</h4>
+                    <p class="description">При заказе услуги через форму на сайте скидка 5%.</p>
+                    <a class="more" href="" title="ОСТАВИТЬ ЗАЯВКУ"><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
+                </div>
+
+            </div>
+            <div class="column column-3-4" id="content">
+                <a name="header">
+                <h3  class="margin-top-20" id="price-list-header" style="width:100%; text-align:center"></a>ПРАЙС ЛИСТ</h3>
+                <div class="row page-margin-top padding-bottom-70">
+
+                        <table id="price-list">
+                            <thead>
+                                <tr>
+                                    <td class="name">Наименование</td>
+                                    <td class="description">Описание</td>
+                                    <td class="cost">Стоимость</td>
+                                    <td class="order"></td>
+                                </tr>
+                            </thead>
+                              <tbody>
+
+                                <div class="spinner"></div>
+                                {% for service_object in service_objects %}
+                                <tr>
+                                  <td class="name">{{service_object.service_name}}<br>
+                                    {% with request.path|dir_by_position:'3' as current_car_type %}
+                                    {% if current_car_type == "DoesNotExist" or current_car_type|length < 3%}
+
+                                    {% with "ServicedCar"|get_object_by_name:'Джипы' as  obj%}
+                                    {% if  service_object.serviced_cars.count > 0%}
+                                    (
+                                    {% if not service_object.serviced_cars.all|contains:obj and service_object.service_type.type_name != "Антикоррозионная обработка"%}
+                                    {{service_object.serviced_cars.all|get_string:"Автомобили"}}
+                                    {% else %}
+                                    {{service_object.serviced_cars.all|get_string:""}}
+                                    {% endif %}
+                                    )
+                                    {% endif %}
+                                    {% endwith %}
+                                    {% else %}
+                                    (
+                                    {% if current_car_type != "Джипы" and service_object.service_type.type_name != "Антикоррозионная обработка"%}
+                                    Автомобили
+                                    {% endif %}
+                                    {{current_car_type}})
+                                    {% endif %}
+                                    {% endwith %}
+                                  </td>
+                                  <td class="description">{{service_object.service_description}}</td>
+                                  <td class="cost">{{service_object.service_cost}}</td>
+                                  <td class="order"><a href="#"><div class="sl-small-shopping-cart"></div></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <div id="pagination-wrapper" class="margin-top-70" >
+                            <div class="row pagination-row" style="display:inline-block">
+                              <div id="light-pagination" class="simple-pagination"></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block add_js %}
+<!-- Paginator js -->
+<script type="text/javascript" src="/static/js/jquery.simplePagination.js"></script>
+ <!-- csrf token -->
+<script type="text/javascript" src="/static/js/csrf.js"></script>
+<!-- sevices.js -->
+<script src="/static/js/services.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+  $(document).ready(function(){
+   $("#light-pagination").pagination({
+    pages: {{count_pages}},
+    displayedPages: 7,
+    currentPage : {{current_page}},
+    hrefTextPrefix: "{{request.path|path_without_page_number}}",
+    hrefTextSuffix: "/",
+    prevText : "<<",
+    nextText: ">>",
+    cssStyle: 'light-theme',
+    selectOnClick: true,
+    onPageClick: ajaxPagination,
+  });
+ })
+
+</script>
+
+{% endblock add_js %}

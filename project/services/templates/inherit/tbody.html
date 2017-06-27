@@ -1,0 +1,33 @@
+{% load customtags %}
+{% for service_object in service_objects %}
+
+<tr>
+    <td class="name">{{service_object.service_name}}<br>
+      {% with request.path|dir_by_position:'3' as current_car_type %}
+      {% if current_car_type == "DoesNotExist" or current_car_type|length < 3%}
+
+      {% with "ServicedCar"|get_object_by_name:'Джипы' as  obj%}
+      {% if  service_object.serviced_cars.count > 0%}
+      (
+      {% if not service_object.serviced_cars.all|contains:obj and service_object.service_type.type_name != "Антикоррозионная обработка"%}
+      {{service_object.serviced_cars.all|get_string:"Автомобили"}}
+      {% else %}
+      {{service_object.serviced_cars.all|get_string:""}}
+      {% endif %}
+      )
+      {% endif %}
+      {% endwith %}
+      {% else %}
+      (
+      {% if current_car_type != "Джипы" and service_object.service_type.type_name != "Антикоррозионная обработка"%}
+      Автомобили
+      {% endif %}
+      {{current_car_type}})
+      {% endif %}
+      {% endwith %}
+  </td>
+  <td class="description">{{service_object.service_description}}</td>
+  <td class="cost">{{service_object.service_cost}}</td>
+  <td class="order"><a href="#"><div class="sl-small-shopping-cart"></div></a></td>
+</tr>
+{% endfor %}

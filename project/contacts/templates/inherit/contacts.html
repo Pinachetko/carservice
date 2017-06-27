@@ -1,0 +1,142 @@
+{% extends "index.html" %}
+{% load customtags %}
+{% block title %}
+Автосервис - Контакты
+{% endblock title %}
+{% block meta %}
+
+{% endblock meta %}
+{% block add_css %}
+<link rel="stylesheet" type="text/css" href="/static/css/contacts.css">{% endblock add_css %}
+{% block slider %}
+
+{% endblock slider %}
+{% block content %}
+<div class="theme-page" style="padding-bottom:66px">
+    <div class="row gray full-width page-header vertical-align-table">
+        <div class="row full-width padding-top-bottom-50 vertical-align-cell">
+            <div class="row">
+                <div class="page-header-left">
+                    <h1>КОНТАКТЫ</h1>
+                </div>
+                <div class="page-header-right">
+                    <div class="bread-crumb-container">
+                        <label>ВЫ ЗДЕСЬ:</label>
+                        <ul class="bread-crumb">
+                            <li>
+                                <a title="КОНТАКТЫ" href="{% url 'contacts' %}">
+                                    КОНТАКТЫ
+                                </a>
+                            </li>
+                            <li class="separator">
+                                &#47;
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-top-70">
+        <div class="column column-3-4">
+            <div class="contact-map" id="map"></div>
+            <div class="row page-margin-top">
+                <div class="column column-1-3">
+                    <ul class="features-list">
+                        <li>
+                            <h5>ПОЗВОНИТЕ СЕЙЧАС</h5>
+                            <div class="icon sl-small-phone-circle"></div>
+                            <p>
+                                Моб.  +7 (903) 827-96-57<br>
+                                Стац. +7(4855) 577-272<br>
+                                Доп. +7 (903) 827-96-57
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-3">
+                    <ul class="features-list">
+                        <li>
+                            <h5>АВТОСЕРВИС В РЫБИНСКЕ </h5>
+                            <div class="icon sl-small-location-map"></div>
+                            <p>
+                                 г. Рыбинск, Копаево, <br>
+                                ул. Чебышева, 6<br>
+                                <a target="_blank" href="https://yandex.ru/maps/10839/rybinsk/?mode=search&text=58.032873%2C%2038.945105&sll=38.944118%2C58.033113&sspn=0.004646%2C0.002177&ll=38.945102%2C58.032810&z=16&ol=biz&oid=50146219719">Показать на карте</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-3">
+                    <ul class="features-list">
+                        <li>
+                            <h5>ПОМОЩЬ 24/7</h5>
+                            <div class="icon sl-small-truck-tow"></div>
+                            <p>Ремонт и обслуживание автомобилей в любое удобное для вас время.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3 class="box-header page-margin-top">ОСТАВИТЬ ЗАЯВКУ</h3>
+            <form class="contact-form page-margin-top" id="contact-form" method="post" action="{% url 'send-message' %}">
+                <div class="row">
+                    <fieldset class="column column-1-2">
+                        <input class="text-input" name="name" type="text" value="Ваше имя*" placeholder="Ваше Имя *">
+                        <input class="text-input" name="email" type="text" value="Ван email*" placeholder="Ваш Email *">
+                        <input class="text-input" name="phone" type="text" value="Ваш номер телефона*" placeholder="Ваш Телефон">
+                    </fieldset>
+                    <fieldset class="column column-1-2">
+                        <textarea name="message" placeholder="Комментарий">Комментарий</textarea>
+                    </fieldset>
+                </div>
+                <div class="row margin-top-30">
+                    <div class="column column-1-2">
+                        <p>Мы свяжемся с вами в течение одного рабочего дня.</p>
+                    </div>
+                    <div class="column column-1-2 align-right">
+                        <input type="hidden" name="action" value="contact_form" />
+                        <div class="row margin-top-20 padding-bottom-20">
+                            <a class="more submit-contact-form" href="#" title="ОТПРАВИТЬ"><span>ОТПРАВИТЬ</span></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="column column-1-4 re-smart-column">
+            <div class="re-smart-column-wrapper">
+
+                <div class="call-to-action">
+                    <div class="hexagon small"><div class="sl-small-percent"></div></div>
+                    <h4 class="margin-top-58">АКЦИЯ</h4>
+                    <p class="description">При заказе услуги через форму на сайте скидка 5%.</p>
+                    <a class="more" href="" title="ОСТАВИТЬ ЗАЯВКУ"><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
+                </div>
+                <h6 class="box-header page-margin-top">КАТЕГОРИИ</h6>
+                <ul class="blog small margin-top-30 clearfix">
+                {% for service_type_object in  service_type_objects|random_slice:"5"%}
+
+                <li>
+                    <a href="{% url 'price-catalog' %}{{service_type_object.type_name|translite:'en'}}/" title="{{service_type_object}}" class="post-image">
+                        <img src="/static/images/samples/90x90/{{service_type_object.image}}" alt="{{service_type_object}}">
+                    </a>
+                    <div class="post-content">
+                        <a href="{% url 'price-catalog' %}{{service_type_object.type_name|translite:'en'}}/" title="{{service_type_object}}">{{service_type_object}}</a>
+                        <ul class="post-details">
+                        </ul>
+                    </div>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block add_js %}
+<script src="/static/js/csrf.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="/static/js/contacts.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+</script>
+{% endblock add_js %}

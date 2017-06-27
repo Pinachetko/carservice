@@ -1,0 +1,43 @@
+
+.services-list li h4{
+    height: 40px;
+}
+
+  @media screen and (max-width: 767px){
+    td.order {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 767px) {
+     #content{
+      margin-top: -40px;
+    }
+  }
+  table#price-list  td {
+    text-align: center;
+    padding:10px 10px 10px 10px;
+}
+table#price-list  td.name {
+    width:40%;
+}
+table#price-list td.description {
+    width:30%;
+}
+table#price-list td.cost {
+    width:20%;
+}
+table#price-list td.order {
+    width:10%;
+}
+table#price-list td.order a{
+    font-size:25px;
+}
+table#price-list td a:hover{
+    text-decoration: none;
+}
+table#price-list tr {
+  border-bottom: 1px solid #CCC;
+}
+div#pagination-wrapper {
+    text-align: center;
+}

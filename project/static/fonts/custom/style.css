@@ -1,0 +1,13 @@
+@font-face {
+  font-family:shirota;
+  src: url(fonts/Shirota/shirota.otf) format("opentype");
+}
+@font-face {
+  font-family:Accuratist;
+  src: url(fonts/Accuratist/Accuratist.otf) format("opentype");
+}
+
+@font-face {
+  font-family:Troika;
+  src: url(fonts/Troika/troika.otf) format("opentype");
+}
