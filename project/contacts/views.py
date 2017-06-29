@@ -42,5 +42,7 @@ def send_message(request):
         msg.attach_alternative(html_content, "text/html")
         msg.send()
         data["submit_message"] = "Сообщение отправлено!"
+    else:
+        data["submit_message"] = "Сообщение не отправлено!"
     return JsonResponse(data)
 

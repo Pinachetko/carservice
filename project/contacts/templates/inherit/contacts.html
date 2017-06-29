@@ -48,7 +48,6 @@
                             <div class="icon sl-small-phone-circle"></div>
                             <p>
                                 Моб.  +7 (903) 827-96-57<br>
-                                Стац. +7(4855) 577-272<br>
                                 Доп. +7 (903) 827-96-57
                             </p>
                         </li>
@@ -70,7 +69,7 @@
                 <div class="column column-1-3">
                     <ul class="features-list">
                         <li>
-                            <h5>ПОМОЩЬ 24/7</h5>
+                            <h5>НЕОТЛОЖНАЯ ПОМОЩЬ</h5>
                             <div class="icon sl-small-truck-tow"></div>
                             <p>Ремонт и обслуживание автомобилей в любое удобное для вас время.</p>
                         </li>
@@ -78,14 +77,14 @@
                 </div>
             </div>
             <h3 class="box-header page-margin-top">ОСТАВИТЬ ЗАЯВКУ</h3>
-            <form class="contact-form page-margin-top" id="contact-form" method="post" action="{% url 'send-message' %}">
-                <div class="row">
+            <form class="contact-form " id="contact-form" method="post" action="{% url 'send-message' %}">
+                <div class="row page-margin-top">
                     <fieldset class="column column-1-2">
                         <input class="text-input" name="name" type="text" value="Ваше имя*" placeholder="Ваше Имя *">
                         <input class="text-input" name="email" type="text" value="Ван email*" placeholder="Ваш Email *">
                         <input class="text-input" name="phone" type="text" value="Ваш номер телефона*" placeholder="Ваш Телефон">
                     </fieldset>
-                    <fieldset class="column column-1-2">
+                    <fieldset class="column column-1-2 margin-top-20">
                         <textarea name="message" placeholder="Комментарий">Комментарий</textarea>
                     </fieldset>
                 </div>
@@ -109,7 +108,7 @@
                     <div class="hexagon small"><div class="sl-small-percent"></div></div>
                     <h4 class="margin-top-58">АКЦИЯ</h4>
                     <p class="description">При заказе услуги через форму на сайте скидка 5%.</p>
-                    <a class="more" href="" title="ОСТАВИТЬ ЗАЯВКУ"><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
+                    <a class="more" href="#win1" title="ОСТАВИТЬ ЗАЯВКУ"><span>ОСТАВИТЬ ЗАЯВКУ</span></a>
                 </div>
                 <h6 class="box-header page-margin-top">КАТЕГОРИИ</h6>
                 <ul class="blog small margin-top-30 clearfix">
@@ -117,7 +116,7 @@
 
                 <li>
                     <a href="{% url 'price-catalog' %}{{service_type_object.type_name|translite:'en'}}/" title="{{service_type_object}}" class="post-image">
-                        <img src="/static/images/samples/90x90/{{service_type_object.image}}" alt="{{service_type_object}}">
+                        <img src="/static/images/samples/390x260/{{service_type_object.image}}" alt="{{service_type_object}}" width="90">
                     </a>
                     <div class="post-content">
                         <a href="{% url 'price-catalog' %}{{service_type_object.type_name|translite:'en'}}/" title="{{service_type_object}}">{{service_type_object}}</a>

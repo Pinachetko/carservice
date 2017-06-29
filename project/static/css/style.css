@@ -1,4 +1,21 @@
 /* --- general --- */
+@media screen and (max-width: 767px){
+	#continue{
+		margin-top: -40px;
+	}
+}
+@media screen and (min-width: 767px) {
+	#continue{
+		margin-top: 60px;
+	}
+}
+.invalid-field{
+	color:red;
+}
+.message-sent{
+	color:green;
+}
+
 div.spinner{
   position: fixed;
   left:55%;
@@ -12,25 +29,7 @@ div.spinner{
   width:100%;
   height: 100%;
 }
-.pop-up-substrate {
-  position: fixed;
-  z-index: 9999991;
-  background: rgba(0,0,0,.5);
-  width:100%;
-  height: 100%;
-  display:none;
-}
-.pop-up{
-	display:none;
-	position:fixed;
-	width:340px;
-	height: 500px;
-	border:1px solid gray;
-	left:40%;
-	bottom:30%;
-	z-index:9999999999;
-	background: rgba(255,255,255,.9);
-}
+
 .clearfix:after
 {
     font-size: 0px;
@@ -1907,7 +1906,9 @@ span.number.sign
 .comment-form input,
 .comment-form textarea,
 .contact-form input,
-.contact-form textarea
+.contact-form textarea,
+.contact-form-popup input,
+.contact-form-popup textarea
 {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1915,23 +1916,30 @@ span.number.sign
 	width: 100%;
 }
 .comment-form input,
-.contact-form input
+.contact-form input,
+.contact-form-popup input
 {
 	margin-top: 20px;
 }
 .comment-form input:first-child,
-.contact-form input:first-child
+.contact-form input:first-child,
+.contact-form-popup input:first-child,
 {
 	margin-top: 0;
 }
 .comment-form textarea,
-.contact-form textarea
+.contact-form textarea,
+.contact-form-popup textarea
 {
 	height: 190px;
 	resize: none;
 }
+.contact-form-popup textarea{
+	margin-top:20px;
+}
 .comment-form [type='submit'],
-.contact-form [type='submit']
+.contact-form [type='submit'],
+.contact-form-popup [type='submit']
 {
 	width: auto;
 	font-size: 12px;
@@ -1939,7 +1947,7 @@ span.number.sign
 	margin-top: 0;
 	outline: none;
 }
-.contact-form  .more.display-block
+.contact-form  .more.display-block, .contact-form  .more.display-block
 {
 	display: block;
 }
@@ -1951,7 +1959,10 @@ span.number.sign
 	color: #1E69B8;
 }
 .comment-form .hint,
-.contact-form .hint
+.contact-form .hint,
+.contact-form .hint,
+.contact-form-popup .hint,
+.contact-form-popup .hint
 {
 	color: #A4AAB3;
 }
@@ -2817,7 +2828,8 @@ td.ui-datepicker-current-day a
 {
 	margin-top: 0;
 }
-.contact-form label
+.contact-form label,
+.contact-form-popup label
 {
 	display: block;
 	font-family: 'Open Sans';

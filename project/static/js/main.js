@@ -789,7 +789,6 @@ jQuery(document).ready(function($){
 				"backgroundColor": "#FFF"
 			}
 		});
-
 		$.ajax({
 			url: self.attr("action"),
 			data: data,
@@ -901,6 +900,85 @@ jQuery(document).ready(function($){
 								at: "top center"
 							}
 						}).qtip('show');
+					}
+				}
+				self.find(".block").unblock();
+			}
+		});
+	});
+	var inputs = $(".contact-form-popup").find("[name='name'], [name='email'], [name='phone']");
+	inputs.each(function(el){
+		$(inputs[el]).on("focus", function(event){
+			$(event.target).removeClass("invalid-field");
+		})
+	})
+	//contact form popup
+	if($(".contact-form-popup").length)
+	{
+		$(".contact-form-popup").each(function(){
+			$(this)[0].reset();
+			$(this).find("input[type='hidden']").each(function(){
+				if(typeof($(this).data("default"))!="undefined")
+					$(this).val($(this).data("default"));
+			});
+			$(this).find(".cost-calculator-price").costCalculator("calculate");
+		});
+		$(".submit-contact-form-popup").on("click", function(event){
+			event.preventDefault();
+			$("#contact-form-popup").submit();
+		});
+	}
+	$(".contact-form-popup").submit(function(event){
+		event.preventDefault();
+		var data = $(this).serializeArray();
+		var self = $(this);
+		//if($(this).find(".total-cost").length)
+		//	data.push({name: 'total-cost', value: $(this).find(".total-cost").val()});
+		self.find(".block").block({
+			message: false,
+			overlayCSS: {
+				opacity:'0.3',
+				"backgroundColor": "#FFF"
+			}
+		});
+		$.ajax({
+			url: self.attr("action"),
+			data: data,
+			type: "post",
+			dataType: "json",
+			success: function(json){
+				self.find(".submit-contact-form-popup, [name='submit'], [name='name'], [name='email'], [name='message']").qtip('destroy');
+				$("p.submit-message").text(json.submit_message);
+				if(typeof(json.isOk)!="undefined" && json.isOk)
+				{
+					if(typeof(json.submit_message)!="undefined" && json.submit_message!="")
+					{
+						$("p.submit-message").removeClass('invalid-field').addClass('message-sent');
+						self.find("[name='name']").attr("value", 'Ваше имя*').removeClass('invalid-field');
+						self.find("[name='phone']").attr("value", 'Ваш номер телефона*').removeClass('invalid-field');
+						self.find("[name='email']").attr("value", 'Ваш email*').removeClass('invalid-field');
+					}
+				}
+				else
+				{
+					if(typeof(json.submit_message)!="undefined" && json.submit_message!="")
+					{
+						$("p.submit-message").addClass("invalid-field");
+					}
+					if(typeof(json.error_name)!="undefined" && json.error_name!="")
+					{
+						self.find("[name='name']").attr("value",json.error_name);
+						self.find("[name='name']").addClass("invalid-field");
+					}
+					if(typeof(json.error_email)!="undefined" && json.error_email!="")
+					{
+						self.find("[name='email']").attr("value",json.error_email);
+						self.find("[name='email']").addClass("invalid-field");
+					}
+					if(typeof(json.error_phone)!="undefined" && json.error_phone!="")
+					{
+						self.find("[name='phone']").attr("value",json .error_phone);
+						self.find("[name='phone']").addClass("invalid-field");
 					}
 				}
 				self.find(".block").unblock();

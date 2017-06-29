@@ -90,14 +90,6 @@ class GrabTask(Task):
                                     if re.search(reg, prod[3]):
                                         cars = []
                                         if text == "Антикоррозионная обработка":
-                                            if models.Service.objects.filter(service_name=re.sub(r"\(.+\)", "", prod[3])).count() == 0:
-                                                material_name = "BODY"
-                                            else:
-                                                material_name = "ТАНТАЛ"
-
-                                            service_entry.material_used = models.MaterialUsed.objects.get(material_name=material_name)
-                                            service_entry.save()
-
                                             if not re.findall(r"\d+", prod[3]):
                                                 cars.append(re.search(reg, prod[3]).group()[1:-1])
                                             flag = True
@@ -120,6 +112,14 @@ class GrabTask(Task):
                                                 print("Создана запись в таблице ServicedCar")
                                             finally:
                                                 service_entry.serviced_cars.add(car_entry)
+                                        if len(cars) and text == "Антикоррозионная обработка":
+                                            if models.Service.objects.filter(service_name=re.sub(r"\([^\(\)]+\)$", "", prod[3]), serviced_cars=car_entry).count() < 2:
+                                                material_name = "BODY"
+                                            else:
+                                                material_name = "ТАНТАЛ"
+
+                                            service_entry.material_used = models.MaterialUsed.objects.get(material_name=material_name)
+                                            service_entry.save()
                         else:
                             print("Ошибка! Не удалось получить текстовое содержимое тегов")
                             print("Колличество проходов=%d"%(count))

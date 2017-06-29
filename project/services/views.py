@@ -14,7 +14,7 @@ import re
 def get_default_data_for_services(request, service_type=None, car_type=None, page=1, method="GET", all_data=True):
     data = {}
     current_page= page
-    records_on_page = 15
+    records_on_page = 20
 
     current_type_name = scripts.Translite(service_type).translite(lang="ru").normalize()
     service_type_objects = models.ServiceType.objects.filter(is_active=True)

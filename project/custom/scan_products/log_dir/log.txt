@@ -1,4 +1,1 @@
-relation "Service_serviced_cars" does not exist
-LINE 1: ...ECT "Service_serviced_cars"."servicedcar_id" FROM "Service_s...
-                                                             ^
-
+name 'meterial_name' is not defined

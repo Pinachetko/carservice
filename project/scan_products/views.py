@@ -20,8 +20,8 @@ def show(request):
 
 def dropdb(request):
     try:
-        services_models.Service.objects.all().delete()
         services_models.ServiceType.objects.all().delete()
+        services_models.Service.objects.all().delete()
         services_models.ServicedCar.objects.all().delete()
         return HttpResponse("All databases are cleaned!" )
     except Exception as e:
