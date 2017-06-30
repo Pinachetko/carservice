@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ContactsConfig(AppConfig):
-   name = 'services'
+    name = 'contacts'
     verbose_name = 'Контакты'

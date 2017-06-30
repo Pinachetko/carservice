@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% load customtags %}
+{% block title %}Автосервис - Bad request{% endblock title %}
+{% block meta %}
+
+{% endblock meta %}
+{% block add_css %}
+{% endblock add_css %}
+{% block slider %}
+{% endblock slider %}
+{% block content %}
+<div class="theme-page padding-bottom-66">
+    <div class="clearfix page-404 top-border">
+        <div class="row margin-top-70">
+            <div class="column column-1-1">
+                <h2>OOPS.</h2>
+                <h1>400</h1>
+                <p class="description align-center">
+                Нам очень жаль, сервер обнаружил, в данном запросе, синтаксическую ошибку. Вернуться на <a href="{% url 'home' %}" title="На главную страницу">главную страницу</a> или используте поиск ниже.</p>
+                <form class="search-form page-margin-top" action="#">
+                    <input type="text" name="s" placeholder="Поиск..." value="Поиск..." class="search-input hint">
+                    <fieldset class="search-submit-container">
+                        <span class="template-search"></span>
+                        <input type="submit" value="" class="search-submit">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block add_js %}
+{% endblock add_js %}

@@ -24,7 +24,7 @@ class DefaultRouter(object):
 
 class DataRouter(object):
 
-    apps = ['home', 'services', 'about', 'contacts']
+    apps = ['home', 'services', 'about', 'contacts', 'parse', 'errors']
 
     def db_for_read(self, models, **hints):
         if models._meta.app_label in self.apps:

@@ -1,5 +1,0 @@
-
-FieldStorage(None, None, [MiniFieldStorage('latitude', '58.05719072'), MiniFieldStorage('longitude', '38.8137472'), MiniFieldStorage('accuracy', '107.0'), MiniFieldStorage('altitude', '94.5999984741211'), MiniFieldStorage('provider', 'gps'), MiniFieldStorage('bearing', '0.0'), MiniFieldStorage('speed', '0.0'), MiniFieldStorage('time', '2017-05-26T08:59:53.00Z'), MiniFieldStorage('battlevel', '7'), MiniFieldStorage('charging', '1'), MiniFieldStorage('deviceid', '353640061682957'), MiniFieldStorage('subscriberid', '250016651718111')])
-FieldStorage(None, None, [])
-FieldStorage(None, None, [])
-FieldStorage(None, None, [])

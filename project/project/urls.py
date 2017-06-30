@@ -17,7 +17,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from home import views as home_views
+from django.views.defaults import page_not_found, server_error, bad_request
+from django.utils.functional import curry
 
+handler404 = curry(page_not_found, template_name='404.html', exception=Exception("Internal error server"))
+handler500 = curry(server_error, template_name='500.html', exception=Exception("Page not Found"))
+handler400 = curry(bad_request, template_name='400.html', exception=Exception("Bad request error"))
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,6 +30,7 @@ urlpatterns = [
     url(r'^contacts/', include('contacts.urls')),
     url(r'^about/', include('about.urls')),
     url(r'^services/', include('services.urls')),
-    url(r'^products/', include('scan_products.urls')),
-    url(r'^', home_views.home),
+    url(r'^parser/', include('parse.urls')),
+    url(r'^$', home_views.home),
 ]
+
