@@ -2,7 +2,7 @@ from django import template
 from project import additional_scripts as scripts
 from services import models
 import os
-from project.settings.dev import PROJECT_ROOT
+from project.settings.base import PROJECT_ROOT
 import re
 import random
 register = template.Library()

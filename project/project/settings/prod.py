@@ -1,6 +1,6 @@
 from .base import *
 
-DEV_DATABASES = {
+PROD_DATABASES = {
     'default': {
         'NAME': "default_db",
         'ENGINE': 'django.db.backends.postgresql',
@@ -21,7 +21,7 @@ DEV_DATABASES = {
     },
 }
 
-DATABASES.update(DEV_DATABASES)
+DATABASES.update(PROD_DATABASES)
 
 ADMINS.append(("Константин", EMAIL_HOST_USER))
 

@@ -1,5 +1,5 @@
 from django.db import models
-from project.settings.dev import PROJECT_ROOT
+from project.settings.base import PROJECT_ROOT
 from os import path
 
 # Create your models here.
