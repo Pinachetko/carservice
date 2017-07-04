@@ -26,4 +26,4 @@ ADMINS.append(("Константин", EMAIL_HOST_USER))
 
 DEBUG = False
 
-ALLOWED_HOSTS.append("192.168.1.65")
+ALLOWED_HOSTS.append("127.0.0.1")

@@ -7,7 +7,7 @@ import re
 import random
 from weasyprint import HTML, CSS
 from django.template.loader import get_template,render_to_string
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 
@@ -27,3 +27,7 @@ def full_services_list(request):
     response = HttpResponse(pdf_file, content_type='application/pdf')
     response['Content-Disposition'] = 'filename="service-list.pdf"'
     return response
+
+
+def undefined(request):
+    return JsonResponse({})

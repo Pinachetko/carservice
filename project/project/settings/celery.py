@@ -11,4 +11,4 @@ app = Celery('app')
 
 app.config_from_object('django.conf:settings')
 
-app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+app.autodiscover_tasks(lambda: dev.INSTALLED_APPS)

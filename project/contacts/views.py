@@ -8,6 +8,8 @@ from django.http import JsonResponse
 import re
 from django.utils import timezone
 from django.core.mail import EmailMultiAlternatives
+from . import tasks
+
 
 # Create your views here.
 @csrf_exempt
@@ -23,8 +25,7 @@ def send_message(request):
     email = request.POST.get("email", '').strip()
     message = request.POST.get("message", '').strip()
     if not re.match(r"^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$", email):
-        data["isOk"] = False
-        data["error_email"] = "Указан не корректный email"
+        email = "Не указан"
     if not re.match(r"^[а-яА-ЯёЁ a-zA-z\-]{3,100}$", name ):
         data["isOk"] = False
         data["error_name"] = "Указано не корректное имя"
@@ -41,8 +42,13 @@ def send_message(request):
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
+
+        # tasks.sendSMS.delay(phone, message, name)
+
         data["submit_message"] = "Сообщение отправлено!"
+
     else:
         data["submit_message"] = "Сообщение не отправлено!"
+
     return JsonResponse(data)
 

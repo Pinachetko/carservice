@@ -19,5 +19,15 @@ class Message(models.Model):
         return self.from_name
 
 
+# class smsSendingSetting(models.Model):
+#     class Meta:
+#         app_label = "contacts"
+#         db_table = "smsSendingSetting"
+#         verbose_name='Настройка отправки смс'
+#         verbose_name_plural = "Настройки отправки смс"
+#     app_id = models.UUIDField(editable=True, verbose_name="app_id", help_text='app_id доступен после регистрации на сайте sms.ru в разделе "Программистам"')
+#     recipient_phone = models.CharField(null=False, blank=False, max_length=25,  verbose_name="Номер телефона", help_text='Номер телефона на который будет отправляться смс')
+#     is_active = models.BooleanField(default=True, verbose_name="Активность")
 
-
+#     def __str__(self):
+#         return self.recipient_phone

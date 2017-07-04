@@ -853,22 +853,6 @@ jQuery(document).ready(function($){
 							}
 						}).qtip('show');
 					}
-					if(typeof(json.error_email)!="undefined" && json.error_email!="")
-					{
-						self.find("[name='email']").qtip(
-						{
-							style: {
-								classes: 'ui-tooltip-error'
-							},
-							content: {
-								text: json.error_email
-							},
-							position: {
-								my: "bottom center",
-								at: "top center"
-							}
-						}).qtip('show');
-					}
 					if(typeof(json.error_phone)!="undefined" && json.error_phone!="")
 					{
 						self.find("[name='phone']").qtip(
@@ -956,11 +940,11 @@ jQuery(document).ready(function($){
 						$("p.submit-message").removeClass('invalid-field').addClass('message-sent');
 						self.find("[name='name']").attr("value", 'Ваше имя*').removeClass('invalid-field');
 						self.find("[name='phone']").attr("value", 'Ваш номер телефона*').removeClass('invalid-field');
-						self.find("[name='email']").attr("value", 'Ваш email*').removeClass('invalid-field');
 					}
 				}
 				else
 				{
+					$("p.submit-message").removeClass('message-sent').addClass('invalid-field');
 					if(typeof(json.submit_message)!="undefined" && json.submit_message!="")
 					{
 						$("p.submit-message").addClass("invalid-field");
@@ -969,11 +953,6 @@ jQuery(document).ready(function($){
 					{
 						self.find("[name='name']").attr("value",json.error_name);
 						self.find("[name='name']").addClass("invalid-field");
-					}
-					if(typeof(json.error_email)!="undefined" && json.error_email!="")
-					{
-						self.find("[name='email']").attr("value",json.error_email);
-						self.find("[name='email']").addClass("invalid-field");
 					}
 					if(typeof(json.error_phone)!="undefined" && json.error_phone!="")
 					{

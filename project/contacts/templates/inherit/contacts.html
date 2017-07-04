@@ -80,17 +80,17 @@
             <form class="contact-form " id="contact-form" method="post" action="{% url 'send-message' %}">
                 <div class="row page-margin-top">
                     <fieldset class="column column-1-2">
-                        <input class="text-input" name="name" type="text" value="Ваше имя*" placeholder="Ваше Имя *">
-                        <input class="text-input" name="email" type="text" value="Ван email*" placeholder="Ваш Email *">
-                        <input class="text-input" name="phone" type="text" value="Ваш номер телефона*" placeholder="Ваш Телефон">
+                        <input class="text-input" name="name" type="text" value="Ваше имя *" placeholder="Ваше Имя *">
+                        <input class="text-input" name="email" type="text" value="Ван email" placeholder="Ваш Email">
+                        <input class="text-input" name="phone" type="text" value="Ваш номер телефона *" placeholder="Ваш Телефон *">
                     </fieldset>
                     <fieldset class="column column-1-2 margin-top-20">
-                        <textarea name="message" placeholder="Комментарий">Комментарий</textarea>
+                        <textarea name="message" placeholder="Комментарий"></textarea>
                     </fieldset>
                 </div>
                 <div class="row margin-top-30">
                     <div class="column column-1-2">
-                        <p>Мы свяжемся с вами в течение одного рабочего дня.</p>
+                        <p>Поля с <span style="color:red"> * </span> обязательны для заполнения.</p>
                     </div>
                     <div class="column column-1-2 align-right">
                         <input type="hidden" name="action" value="contact_form" />

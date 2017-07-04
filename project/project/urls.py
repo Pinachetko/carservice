@@ -31,6 +31,6 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^services/', include('services.urls')),
     url(r'^parser/', include('parse.urls')),
-    url(r'^$', home_views.home),
+    url(r'^', include('home.urls')),
 ]
 

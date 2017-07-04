@@ -18,3 +18,5 @@ reportlab==3.4.0
 cairocffi==0.6
 weasyprint
 uwsgi==2.0.15
+django-sendsms==0.2.3
+

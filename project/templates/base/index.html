@@ -7,8 +7,24 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.2" />
 		<meta name="format-detection" content="telephone=no" />
-		<meta name="keywords" content="" />
-		<meta name="description" content="" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="PiNaCheT">
+
+		<meta name="keywords" content="ремонт автомобилей, автосервис Рыбинск, авторемонтная мастерская,авторемонтная мастерская в Рыбинске, сто, сто в Рыбинске, сто Рыбинск, сто рыбинск, автосервис в Рыбинске, авторемонтная мастерская Рыбинск, авторемонтная мастерская, автосервис, автосервис рыбинск, рыбинск-автосервис.рф, Автосервис ИП Жолнин, ИП Жолнин, ип жолнин, сто ИП Жолнин, Авторемонтная мастерская ИП Жолнин, диагностика автомобиля, ремонт авто, кузовной ремонт, кузовной ремнт автомобилей, компьютерная диагностика автомобиля, диагностика ходовой, ремонт ходовой части, ремонт подвески, ремонт двигателя автомобиля (ремонт ДВС), ТО автомобилей, сход-развал, шиномонтаж, диагностика электрики автомобиля, ремонт электрики автомобиля (ремонт автоэлектрики), кузовной и слесарный ремонт автомобилей, сервис и обслуживание автомобилей, Ремонт двигателя автомобилей, Замена и ремонт тормозной системы, Диагностика и ремонт ходовой части, Сход-развал и регулировка углов развал-схождения колес, Ремонт рулевого управления, Шиномонтаж, Шиномонтаж в Рыбинске, Шиномонтаж Рыбинск, Замена технических жидкостей автомобиля, Ремонт КПП (механических, автоматических), Ремот КПП, Замена ремней и тросов, Элетротехнические работы" />
+
+		<meta name="description" content="Автосервис ИП Жолнин производит комплексное обслуживание автомобилей. Автосервис находится в Рыбинске и производит ремонт различных типов авто как отечественных, так и импортных. Мы работаем качественно, быстро и профессионально, чтобы Вы были на 100% уверены в своем автомобиле. Автосервис ИП Жолнин - техцентр, которому Вы можете доверить ремонт и обслуживание Вашего автомобиля."/>
+
+		<meta name="robots" content="all">
+
+		<meta property="place:location:latitude" content="58.032862"/>
+		<meta property="place:location:longitude" content="38.945197"/>
+		<meta property="business:contact_data:street_address" content="Чебышева"/>
+		<meta property="business:contact_data:locality" content="Рыбинск"/>
+		<meta property="business:contact_data:postal_code" content="152934">
+		<meta property="business:contact_data:country_name" content="Россия"/>
+		<meta property="business:contact_data:email" content="zholnin.sasha@yandex.ru"/>
+		<meta property="business:contact_data:phone_number" content="+7 (903) 827-96-57"/>
+		<meta property="business:contact_data:website" content="http://рыбинск-автосервис.рф">
 		{% block meta %}
 
 		{% endblock meta %}
@@ -37,6 +53,20 @@
 		<style type="text/css" media="screen">
 
 		</style>
+		<!--[if lt IE 9]>
+			<script type="text/javascript">
+				document.createElement('header'); document.createElement('footer'); document.createElement('nav');
+				document.createElement('article'); document.createElement('section'); document.createElement('aside');
+			</script>
+			<style type="text/css">header, footer, nav, article, section, aside {display: block;}</style>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<!--[if IE]>
+	  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
 	<body>
 		<div class="site-container">
@@ -46,14 +76,14 @@
 			<a href="#x" class="overlay" id="win1"></a>
 			<div class="popup" id="popup">
 				<h2>ОСТАВИТЬ ЗАЯВКУ</h2>
-				<p class="submit-message">*Мы свяжемся с вами в течении одного рабочего дня</p>
+				<p class="submit-message">Поля с <span style="color:red">*</span> обязательны для заполнения</p>
 				<form class="contact-form-popup " id="contact-form-popup" method="post" action="{% url 'send-message' %}">
 					<div>
 
-						<input class="text-input" name="name" type="text" value="Ваше имя*" placeholder="Ваше Имя *">
-						<input class="text-input" name="email" type="text" value="Ван email*" placeholder="Ваш Email *">
-						<input class="text-input" name="phone" type="text" value="Ваш номер телефона*" placeholder="Ваш Телефон">
-						<textarea name="message" placeholder="Комментарий">Комментарий</textarea>
+						<input class="text-input" name="name" type="text" value="Ваше имя *" placeholder="Ваше Имя *">
+						<input class="text-input" name="email" type="text" value="Ван email" placeholder="Ваш Email">
+						<input class="text-input" name="phone" type="text" value="Ваш номер телефона *" placeholder="Ваш Телефон *">
+						<textarea name="message" placeholder="Комментарий"></textarea>
 					</div>
 						<div class="padding-bottom-20 margin-top-30 align-center">
 							<a class="more " id="btn-close-popup" href="#close" title="Закрыть"><span>ЗАКРЫТЬ</span></a>
