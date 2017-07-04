@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /static
+Disallow: /media
+
+
+Sitemap: http://рыбинск-автосервис.рф/meta/sitemap.xml

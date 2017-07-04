@@ -29,7 +29,6 @@ ADMINS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'errors',
     'mytemplatetags',
     'sendsms',
+    'meta',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -88,6 +88,9 @@ TEMPLATES = [
             os.path.join(PROJECT_ROOT, "mytemplatetags/templates/base/"),
             os.path.join(PROJECT_ROOT, "mytemplatetags/templates/inherit/"),
             os.path.join(PROJECT_ROOT, "mytemplatetags/templates/"),
+            os.path.join(PROJECT_ROOT, "meta/templates/base/"),
+            os.path.join(PROJECT_ROOT, "meta/templates/inherit/"),
+            os.path.join(PROJECT_ROOT, "meta/templates/"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -182,4 +185,5 @@ STATICFILES_DIRS = (
                     os.path.join(PROJECT_ROOT, 'about/static/'),
                     os.path.join(PROJECT_ROOT, 'errors/static/'),
                     os.path.join(PROJECT_ROOT, 'mytemplatetags/static/'),
+                    os.path.join(PROJECT_ROOT, 'meta/static/'),
                     )
