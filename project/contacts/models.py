@@ -11,7 +11,7 @@ class Message(models.Model):
     from_name = models.CharField(null=False, blank=False, max_length=100,  verbose_name="Имя отправителя")
     from_email = models.EmailField(max_length=500,  verbose_name="Email отправителя")
     from_phone = models.CharField(null=True, blank=True, max_length=20,  verbose_name="Телефон отправителя")
-    from_message = models.CharField(null=True, blank=True, max_length=500,  verbose_name="Сообщение")
+    from_message = models.TextField(null=True, blank=True, max_length=1000,  verbose_name="Сообщение")
     from_date_time = models.DateTimeField(verbose_name="Время отправления",null=False, blank=False)
 
 

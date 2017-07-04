@@ -11,3 +11,8 @@
   font-family:Troika;
   src: url(fonts/Troika/troika.otf) format("opentype");
 }
+
+@font-face {
+  font-family:Uni_Sans_Heavy;
+  src: url(fonts/Uni_Sans/uni_sans_heavy.otf) format("opentype");
+}

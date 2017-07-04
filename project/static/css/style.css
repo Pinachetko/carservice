@@ -15,7 +15,9 @@
 .message-sent{
 	color:green;
 }
-
+.item-clock{
+	display:inline-block;
+}
 div.spinner{
   position: fixed;
   left:55%;
